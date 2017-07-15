@@ -15,18 +15,27 @@ function addTodo(todo){
 addTodo('Watch and Code V3');
 
 //Requirement 3: It should have a function to change todos
-function changeTodo(position, newTodo){
-    todos[position]=newTodo;
+function changeTodo(oldtodo, newTodo){
+    todos[todos.indexOf(oldtodo)]=newTodo;
     displayTodos();
 }
 //test
-changeTodo(0,'changed again');
+changeTodo('item1','changed again');
 
 //Requirement 4: It should have a function to delete todos
-function deleteTodo(position){
-    todos.splice(position,1);
+function deleteTodo(todo){
+    todos.splice(todos.indexOf(todo),1);
     displayTodos();
 }
 
 //test
-deleteTodo(0);
+deleteTodo('item3');
+
+//Delete all todos
+
+function clearTodos(){
+    todos.splice(0,todos.length);
+    displayTodos();
+}
+
+clearTodos();

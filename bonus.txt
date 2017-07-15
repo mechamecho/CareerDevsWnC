@@ -1,0 +1,3 @@
+I upgraded Version1 by creating a function that deletes all the todos for you. I also 
+upgraded all other functions to take in the name of the todo, instead of its index to make
+it easier for the user.
