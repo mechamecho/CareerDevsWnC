@@ -10,3 +10,9 @@ todos[index_of_item_to_be_changed]='new value';
 //Requirement 5: a way to remove a todo:
 var index_of_item_to_be_removed;
 todos.splice(index_of_item_to_be_removed,1);
+//upgrading Version1
+function deleteItem(array, item){
+    return array.splice(array.indexOf(item),1);    
+}
+//new way of removing items:
+deleteItem(todos,'item4');
