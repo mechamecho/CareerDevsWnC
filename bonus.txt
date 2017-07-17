@@ -1,0 +1,3 @@
+Changed it so that instead of having to put in the position, just the name of the 
+old to do, or the to do to be deleted is necessary. Also added a function that clears 
+all the todos, in the todo list.

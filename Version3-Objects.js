@@ -10,18 +10,19 @@ var todoList={
         this.todos.push(newTodo);
         this.displayTodos();
     },
-     //It should have a changeTodo method
-    changeTodo: function(position,newTodo){
-        this.todos[position]=newTodo;
+    //It should have a changeTodo method
+    changeTodo: function(oldTodo,newTodo){
+        this.todos[this.todos.indexOf(oldTodo)]=newTodo;
         this.displayTodos();
     },
     //It should have a deleteTodo function
-    deleteTodo:function(position){
-        this.todos.splice(position,1);
+    deleteTodo:function(todo){
+        this.todos.splice(this.todos.indexOf(todo),1);
+        this.displayTodos();
+    },
+    //clearTodos
+    clearTodos:function(){
+        this.todos.splice(0,this.todos.length-1);
         this.displayTodos();
     }
 };
-//test
-todoList.displayTodos();
-//test 
-todoList.addTodo('do HW')
