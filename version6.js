@@ -69,9 +69,17 @@ var todoList={
         this.displayTodos();
     }
 };
-// //test
-// todoList.displayTodos();
-// //test 
-// todoList.addTodo('do HW');
-// todoList.changeTodo(0,'second try');
-// todoList.toggleCompleted(0);
+//Version 7 
+//1. we want to get access to the Display Todos button
+var displayTodosButton = document.getElementById("displayTodosButton");
+var toggleAllButton=document.getElementById("toggleAllButton");
+// console.log(displayTodosButton);
+//2. we want to run todoList.displayTodos when someone clicks the displays todos button
+displayTodosButton.addEventListener('click', function(){
+    todoList.displayTodos();
+    
+});
+//clicking toggleAllButton should run todoList.toggleAll()
+toggleAllButton.addEventListener('click', function(){
+    todoList.toggleAll();
+})
