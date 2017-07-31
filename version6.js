@@ -1,9 +1,6 @@
-//Starting code from Version5
-//It should store the todos array on an Object
+
 var todoList={
     todos: [],
-    //It should have a displayTodos method
-    //should display todoText
     displayTodos: function(){
         if(this.todos.length===0){
             console.log("Your todo List is empty!");
@@ -69,17 +66,35 @@ var todoList={
         this.displayTodos();
     }
 };
-//Version 7 
-//1. we want to get access to the Display Todos button
-var displayTodosButton = document.getElementById("displayTodosButton");
-var toggleAllButton=document.getElementById("toggleAllButton");
-// console.log(displayTodosButton);
-//2. we want to run todoList.displayTodos when someone clicks the displays todos button
-displayTodosButton.addEventListener('click', function(){
+
+var handlers={
+  displayTodos: function(){
     todoList.displayTodos();
-    
-});
-//clicking toggleAllButton should run todoList.toggleAll()
-toggleAllButton.addEventListener('click', function(){
+  },
+
+addTodo:function(){
+    var addTodoTextInput=document.getElementById("addTodoTextInput");
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value="";
+}, 
+changeTodo:function(){
+    var changeTodoPositionInput=document.getElementById("changeTodoPositionInput");
+    var changeTodoTextInput=document.getElementById("changeTodoTextInput");
+    todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+    changeTodoPositionInput.value="";
+    changeTodoTextInput.value="";
+},
+deleteTodo:function(){
+    var deleteTodoPositionInput=document.getElementById("deleteTodoPositionInput");
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+    deleteTodoPositionInput.value="";
+},
+toggleCompleted:function(){
+    var toggleCompletedPositionInput=document.getElementById("toggleCompletedPositionInput");
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value="";
+},
+  toggleAll:function(){
     todoList.toggleAll();
-})
+}
+};
